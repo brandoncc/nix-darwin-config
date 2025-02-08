@@ -28,6 +28,15 @@
       function clean-merged-branches() {
         REPO=$(pwd) cargo run --manifest-path ~/dev/git-tools/Cargo.toml clean-merged-branches
       }
+
+      function nsetup() {
+        if [[ -z "$NIX_DARWIN_MACHINE_NAME" ]]; then
+          echo "Error: NIX_DARWIN_MACHINE_NAME is not set." >&2
+          return 1
+        fi
+
+        darwin-rebuild switch --flake ~/.config/nix-darwin#"$NIX_DARWIN_MACHINE_NAME"
+      }
   '';
 
   autosuggestion = {
@@ -67,7 +76,6 @@
     mcd = "mkdir -p $1 && cd $1";
     mux = "tmuxinator start $1";
     nconfig = "cd ~/.config/nix-darwin; nvim .; cd -";
-    nsetup = "darwin-rebuild switch --flake ~/.config/nix-darwin#mbp";
     nupgradeall = "cd ~/.config/nix-darwin; nix flake update; nsetup; cd -";
     ohmyzsh = "nvim ~/.oh-my-zsh";
     p = "git pull";

@@ -19,6 +19,7 @@ args@{...}:
   sessionVariables = {
     EDITOR = "nvim";
     VISUAL = "nvim";
+    NIX_DARWIN_MACHINE_NAME = "personal";
     NVIM_APPNAME = "nvim-unchained";
   };
 
