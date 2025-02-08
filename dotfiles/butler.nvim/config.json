@@ -1,0 +1,116 @@
+{
+  "$HOME/dev/outage_buddy": [
+    {
+      "name": "rails",
+      "cmd": "foreman start -f Procfile.dev"
+    },
+    {
+      "name": "console",
+      "cmd": "bin/rails console"
+    },
+    {
+      "name": "sidekiq",
+      "cmd": "bin/sidekiq"
+    },
+    {
+      "name": "gulp",
+      "cmd": "yarn gulp"
+    }
+  ],
+  "$HOME/dev/taskarific": [
+    {
+      "name": "rails",
+      "cmd": "bin/dev"
+    },
+    {
+      "name": "console",
+      "cmd": "bin/rails console"
+    }
+  ],
+  "$HOME/dev/libbe": [
+    {
+      "name": "rails",
+      "cmd": "bin/server"
+    },
+    {
+      "name": "console",
+      "cmd": "bin/rails console"
+    },
+    {
+      "name": "sidekiq",
+      "cmd": "bin/sidekiq"
+    }
+  ],
+  "$HOME/dev/dossier": [
+    {
+      "name": "rails",
+      "cmd": "bin/rails server"
+    },
+    {
+      "name": "console",
+      "cmd": "bin/rails console"
+    }
+  ],
+  "$HOME/dev/ls/railstutors": [
+    {
+      "name": "rails",
+      "cmd": "bin/rails server"
+    },
+    {
+      "name": "console",
+      "cmd": "bin/rails console"
+    },
+    {
+      "name": "sidekiq",
+      "cmd": "bundle exec sidekiq"
+    }
+  ],
+  "$HOME/dev/alarm_to_phone_call": [
+    {
+      "name": "rails",
+      "cmd": "foreman start -f Procfile.dev"
+    },
+    {
+      "name": "console",
+      "cmd": "bin/rails console"
+    },
+    {
+      "name": "sidekiq",
+      "cmd": "bin/sidekiq"
+    }
+  ],
+  "$HOME/dev/buy_prices": [
+    {
+      "name": "rails/tailwind",
+      "cmd": "SCOUT_DEV_TRACE=true bin/dev"
+    },
+    {
+      "name": "console",
+      "cmd": "bin/rails console"
+    },
+    {
+      "name": "sidekiq",
+      "cmd": "bin/sidekiq"
+    }
+  ],
+  "/workspaces/buy_prices": [
+    {
+      "name": "rails/tailwind",
+      "cmd": "SCOUT_DEV_TRACE=true bin/dev"
+    },
+    {
+      "name": "console",
+      "cmd": "bin/rails console"
+    },
+    {
+      "name": "sidekiq",
+      "cmd": "bin/sidekiq"
+    }
+  ],
+  "$HOME/dev/brandoncc.dev": [
+    {
+      "name": "bridgetown",
+      "cmd": "bin/bt start"
+    }
+  ],
+}

@@ -1,0 +1,5 @@
+args@{...}:
+
+{
+  fontconfig.enable = true;
+}
