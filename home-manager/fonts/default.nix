@@ -1,5 +1,5 @@
-args@{...}:
+{...}:
 
 {
-  fontconfig.enable = true;
+  fonts.fontconfig.enable = true;
 }

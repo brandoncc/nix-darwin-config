@@ -1,5 +1,5 @@
-_args@{...}:
+{...}:
 
 {
-  enable = true;
+  editorconfig.enable = true;
 }

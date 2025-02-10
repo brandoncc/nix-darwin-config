@@ -1,8 +1,10 @@
-args@{ inputs, pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 let
   neovimNightlyPackage = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
 in {
-  enable = true;
-  package = neovimNightlyPackage;
+  programs.neovim = {
+    enable = true;
+    package = neovimNightlyPackage;
+  };
 }
