@@ -1,4 +1,5 @@
-{ config, pkgs, ... }:
+{ ... }:
+
 {
-  imports = [ ./common.nix ];
+  imports = [ ./common ./personal/git ./personal/home/packages ];
 }

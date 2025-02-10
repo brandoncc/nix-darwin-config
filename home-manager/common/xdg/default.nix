@@ -1,7 +1,6 @@
-{ ...}:
+{...}:
 let
-  dotfiles = ../../dotfiles;
-
+  dotfiles = ../../../dotfiles;
 in  {
   xdg = {
     configFile."aerospace" = {
@@ -19,12 +18,6 @@ in  {
       target = "../.hammerspoon"; # ~/.config/../.hammerspoon
     };
 
-    configFile."tmuxinator" = {
-      source = "${dotfiles}/tmuxinator/.tmuxinator";
-      target = "../.tmuxinator"; # ~/.config/../.tmuxinator
-    };
-
-    configFile."butler.nvim".source = "${dotfiles}/butler.nvim";
     configFile."nvim-unchained".source = "${dotfiles}/nvim-unchained";
     configFile."wezterm".source = "${dotfiles}/wezterm";
 
