@@ -1,6 +1,8 @@
 { ... }:
 
 {
+  nix.settings.experimental-features = "nix-command flakes";
+
   # Set user configuration options in nix-darwin
   users.users.brandoncc = {
     home = "/Users/brandoncc";
