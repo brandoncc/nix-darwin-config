@@ -22,18 +22,17 @@
         modules = [
           # https://github.com/hraban/mac-app-util fixes common problems with apps installed on mac
           mac-app-util.darwinModules.default
-          ./configuration.nix
+          ./flake-config/personal.nix
 
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.brandoncc = import ./home-manager;
+            home-manager.users.brandoncc = import ./home-manager/personal.nix;
 
             # Optionally, use home-manager.extraSpecialArgs to pass
             # arguments to home.nix
             home-manager.extraSpecialArgs = {
-              dotfiles = ./dotfiles;
               inputs = inputs;
             };
 
@@ -43,7 +42,6 @@
           }
         ];
         specialArgs = {
-          dotfiles = ./dotfiles;
           inputs = inputs;
         };
       };
