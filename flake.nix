@@ -45,6 +45,35 @@
           inputs = inputs;
         };
       };
+
+      work = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [
+          # https://github.com/hraban/mac-app-util fixes common problems with apps installed on mac
+          mac-app-util.darwinModules.default
+          ./flake-config/work.nix
+
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.brandoncc = import ./home-manager/work.nix;
+
+            # Optionally, use home-manager.extraSpecialArgs to pass
+            # arguments to home.nix
+            home-manager.extraSpecialArgs = {
+              inputs = inputs;
+            };
+
+            home-manager.sharedModules = [
+              mac-app-util.homeManagerModules.default
+            ];
+          }
+        ];
+        specialArgs = {
+          inputs = inputs;
+        };
+      };
     };
   };
 }
