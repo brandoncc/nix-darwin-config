@@ -26,6 +26,12 @@
       ZSH_THEME_GIT_PROMPT_PREFIX="(%{$fg[red]%}";
       # end sudar theme
 
+      # START DEV CONFIG
+      [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
+      [[ -f /opt/dev/sh/chruby/chruby.sh ]] && { type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; } }
+      [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+      # END DEV CONFIG
+
       function clean-merged-branches() {
         REPO=$(pwd) cargo run --manifest-path ~/dev/git-tools/Cargo.toml clean-merged-branches
       }
