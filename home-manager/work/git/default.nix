@@ -1,10 +1,10 @@
-{ ... }:
+{ config, ... }:
 
 {
   programs.git.userName = "Brandon Conway";
   programs.git.userEmail = "brandon.conway@shopify.com";
   programs.git.includes = [
-    "~/.config/dev/gitconfig"
+    { path = "${config.home.homeDirectory}/.config/dev/gitconfig"; }
   ];
 
   programs.git.extraConfig = {

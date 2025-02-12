@@ -53,7 +53,6 @@
   homebrew = {
     enable = true;
     global.autoUpdate = true;
-    onActivation.cleanup = "zap"; # uninstall packages not in the list _and_ remove their related files and configurations
 
     taps = [
       "nikitabobko/tap" # for aerospace
@@ -67,7 +66,6 @@
       "alfred"
       "hammerspoon"
       "nikitabobko/tap/aerospace"
-      "quicken"
     ];
   };
 

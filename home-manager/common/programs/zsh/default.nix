@@ -53,7 +53,7 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["autojump"  "direnv"];
+      plugins = ["autojump"];
       # theme = "sudar";
     };
 

@@ -8,9 +8,12 @@
     "/Applications/Spark Desktop.app"
   ];
 
+  homebrew.onActivation.cleanup = "zap"; # uninstall packages not in the list _and_ remove their related files and configurations
+
   homebrew.casks = lib.mkAfter [
     "1password"
     "brave-browser"
+    "quicken"
   ];
 
   homebrew.masApps = {
