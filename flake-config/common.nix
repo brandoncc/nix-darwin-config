@@ -67,6 +67,7 @@
     casks = [
       "alfred"
       "hammerspoon"
+      "logseq"
       "nikitabobko/tap/aerospace"
     ];
   };
