@@ -22,6 +22,8 @@
     "/Users/brandoncc/Downloads"
   ];
 
+  system.defaults.screencapture.location = "~/Screenshots";
+
   system.defaults.dock.show-recents = false;
   system.defaults.dock.autohide = true;
   system.defaults.finder.NewWindowTarget = "Home";
