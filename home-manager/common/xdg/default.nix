@@ -1,28 +1,28 @@
-{...}:
+{ config, ... }:
 let
-  dotfiles = ../../../dotfiles;
+  dotfiles = "${config.home.homeDirectory}/.config/nix-darwin/dotfiles";
 in  {
   xdg = {
     configFile."aerospace" = {
-      source = "${dotfiles}/aerospace/.aerospace.toml";
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/aerospace/.aerospace.toml";
       target = "../.aerospace.toml"; # ~/.config/../.aerospace
     };
 
     configFile."editorconfig" = {
-      source = "${dotfiles}/editorconfig/.editorconfig";
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/editorconfig/.editorconfig";
       target = "../.editorconfig"; # ~/.config/../.editorconfig
     };
 
     configFile."hammerspoon" = {
-      source = "${dotfiles}/hammerspoon/.hammerspoon";
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/hammerspoon/.hammerspoon";
       target = "../.hammerspoon"; # ~/.config/../.hammerspoon
     };
 
-    configFile."nvim-unchained".source = "${dotfiles}/nvim-unchained";
-    configFile."wezterm".source = "${dotfiles}/wezterm";
+    configFile."nvim-unchained".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/nvim-unchained";
+    configFile."wezterm".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/wezterm";
 
     # configFile."tmux" = {
-    #   source = "${dotfiles}/tmux/.tmux.conf";
+    #   source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/tmux/.tmux.conf";
     #   target = "../.tmux.conf"; # ~/.config/../.tmux.conf
     # };
   };
