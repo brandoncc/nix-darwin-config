@@ -1,12 +1,16 @@
-{...}:
+{ config, ... }:
 
 let
-  dotfiles = ../../../dotfiles;
+  dotfiles = "${config.home.homeDirectory}/.config/nix-darwin/dotfiles";
 in  {
-    xdg.configFile."butler.nvim".source = "${dotfiles}/butler.nvim";
+  xdg.configFile."butler.nvim" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/butler.nvim";
+    recursive = true;
+  };
 
-    xdg.configFile."tmuxinator" = {
-      source = "${dotfiles}/tmuxinator/.tmuxinator";
-      target = "../.tmuxinator"; # ~/.config/../.tmuxinator
-    };
+  xdg.configFile."tmuxinator" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/tmuxinator/.tmuxinator";
+    target = "../.tmuxinator"; # ~/.config/../.tmuxinator
+    recursive = true;
+  };
 }

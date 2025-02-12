@@ -16,14 +16,23 @@ in  {
     configFile."hammerspoon" = {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/hammerspoon/.hammerspoon";
       target = "../.hammerspoon"; # ~/.config/../.hammerspoon
+      recursive = true;
     };
 
-    configFile."nvim-unchained".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/nvim-unchained";
-    configFile."wezterm".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/wezterm";
+    configFile."nvim-unchained" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/nvim-unchained";
+      recursive = true;
+    };
+
+    configFile."wezterm" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/wezterm";
+      recursive = true;
+    };
 
     # configFile."tmux" = {
     #   source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/tmux/.tmux.conf";
     #   target = "../.tmux.conf"; # ~/.config/../.tmux.conf
+    #   recursive = true;
     # };
   };
 }
