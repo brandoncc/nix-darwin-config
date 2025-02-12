@@ -16,6 +16,6 @@
   ];
 
   system.defaults.dock.persistent-others = lib.mkAfter [
-    "~/Screenshots"
+    "${config.users.users.brandoncc.home}/Screenshots"
   ];
 }
