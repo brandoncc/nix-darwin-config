@@ -15,6 +15,7 @@
       strategy = ["history" "completion"];
     };
 
+    defaultKeymap = "viins";
     historySubstringSearch.enable = true;
 
     oh-my-zsh = {
