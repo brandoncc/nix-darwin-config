@@ -5,6 +5,6 @@ let
 in  {
   xdg.configFile."work-zsh" = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/zsh/.work.zshrc";
-    target = "../.machine_specific.zshrc"; # ~/.zshrc
+    target = "../.zshrc"; # ~/.zshrc
   };
 }

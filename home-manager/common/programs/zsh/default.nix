@@ -4,10 +4,32 @@
   programs.zsh = {
     enable = true;
     autocd = true;
+    dotDir = ".config/zsh";
 
     initExtra = ''
+      # Ensure homebrew paths are in PATH. We have to do this manually because
+      # using programs.zsh.dotDir causes these paths to be removed for some
+      # reason.
+      #
+      # ref: https://github.com/nix-community/home-manager/issues/6483
+      homebrewBinPath="/opt/homebrew/bin"
+      brewBinaryPath="$homebrewBinPath/brew"
+      masBinPath="/opt/homebrew/sbin"
+
+      if [ -f "$brewBinaryPath" ]; then
+        if [ -d "$masBinPath" ]; then
+          if [[ ":$PATH:" != *":$masBinPath:"* ]]; then
+            export PATH="$masBinPath:$PATH"
+          fi
+        fi
+
+        if [[ ":$PATH:" != *":$homebrewBinPath:"* ]]; then
+          export PATH="$homebrewBinPath:$PATH"
+        fi
+      fi
+
       source ~/.common.zshrc
-      source ~/.machine_specific.zshrc
+      source ~/.zshrc
     '';
 
     autosuggestion = {

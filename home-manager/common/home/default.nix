@@ -1,8 +1,6 @@
-{ config, ... }:
+{ ... }:
 
-let
-  dotfiles = "${config.home.homeDirectory}/.dotfiles";
-in  {
+{
   home = {
     # Home Manager needs a bit of information about you and the
     # paths it should manage.
@@ -23,9 +21,6 @@ in  {
       EDITOR = "nvim";
       VISUAL = "nvim";
       NVIM_APPNAME = "nvim-unchained";
-
-      # ensure homebrew is in the path, but not before nix -- per Chat GPT
-      PATH = "$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:/opt/homebrew/bin:$PATH";
     };
   };
 

@@ -10,7 +10,7 @@ in  {
 
   xdg.configFile."personal-zsh" = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/zsh/.personal.zshrc";
-    target = "../.machine_specific.zshrc"; # ~/.machine_specific.zshrc
+    target = "../.zshrc"; # ~/.zshrc
   };
 
   xdg.configFile."tmuxinator" = {
