@@ -15,6 +15,8 @@
       strategy = ["history" "completion"];
     };
 
+    historySubstringSearch.enable = true;
+
     oh-my-zsh = {
       enable = true;
       plugins = ["autojump"];
