@@ -9,8 +9,6 @@ in  {
     username = "brandoncc";
     homeDirectory = "/Users/brandoncc";
 
-    file.".common.zshrc".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/zsh/.common.zshrc";
-
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
     # when a new Home Manager release introduces backwards

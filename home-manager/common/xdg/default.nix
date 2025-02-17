@@ -1,11 +1,16 @@
 { config, ... }:
 let
-  dotfiles = "${config.home.homeDirectory}/.config/nix-darwin/dotfiles";
+  dotfiles = "${config.home.homeDirectory}/.dotfiles";
 in  {
   xdg = {
     configFile."aerospace" = {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/aerospace/.aerospace.toml";
       target = "../.aerospace.toml"; # ~/.config/../.aerospace
+    };
+
+    configFile."common-zsh" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/zsh/.common.zshrc";
+      target = "../.common.zshrc"; # ~/.common.zshrc
     };
 
     configFile."editorconfig" = {
