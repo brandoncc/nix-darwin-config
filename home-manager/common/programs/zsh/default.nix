@@ -6,44 +6,8 @@
     autocd = true;
 
     initExtra = ''
-      # start sudar theme
-      _sudar_collapsed_wd() {
-        echo $(pwd | perl -pe "
-         BEGIN {
-            binmode STDIN,  ':encoding(UTF-8)';
-            binmode STDOUT, ':encoding(UTF-8)';
-         }; s|^$HOME|~|g; s|/([^/])[^/]*(?=/[^/]*/[^/]*/)|/\$1|g
-      ")
-      }
-
-      local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
-      PROMPT='$ret_status%{$fg_bold[green]%}%p %{$fg[cyan]%}$(_sudar_collapsed_wd) %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
-
-      # ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
-      ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-      ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
-      ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
-      ZSH_THEME_GIT_PROMPT_PREFIX="(%{$fg[red]%}";
-      # end sudar theme
-
-      # START DEV CONFIG
-      [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
-      [[ -f /opt/dev/sh/chruby/chruby.sh ]] && { type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; } }
-      [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
-      # END DEV CONFIG
-
-      function clean-merged-branches() {
-        REPO=$(pwd) cargo run --manifest-path ~/dev/git-tools/Cargo.toml clean-merged-branches
-      }
-
-      function nsetup() {
-        if [[ -z "$NIX_DARWIN_MACHINE_NAME" ]]; then
-          echo "Error: NIX_DARWIN_MACHINE_NAME is not set." >&2
-          return 1
-        fi
-
-        darwin-rebuild switch --flake ~/.config/nix-darwin#"$NIX_DARWIN_MACHINE_NAME"
-      }
+      source ~/.common.zshrc
+      source ~/.machine_specific.zshrc
     '';
 
     autosuggestion = {
