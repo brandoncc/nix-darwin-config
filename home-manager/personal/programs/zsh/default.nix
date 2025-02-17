@@ -1,5 +1,5 @@
-{pkgs, lib, ...}:
+{ lib, ... }:
 
 {
-  programs.zsh.oh-my-zsh.plugins = lib.mkAfter [ "direnv"];
+  programs.zsh.oh-my-zsh.plugins = lib.mkAfter [ "direnv" ];
 }
