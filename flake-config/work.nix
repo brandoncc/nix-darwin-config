@@ -5,6 +5,10 @@
 
   homebrew.onActivation.cleanup = "none"; # do not remove homebrew packages installed outside of nix
 
+  homebrew.casks = lib.mkAfter [
+    "vanilla"
+  ];
+
   system.defaults.dock.persistent-apps = [
     "/Applications/Logseq.app"
     "/Applications/Google Chrome.app"
