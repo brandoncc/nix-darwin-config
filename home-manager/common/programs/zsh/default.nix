@@ -38,7 +38,6 @@
     };
 
     defaultKeymap = "viins";
-    historySubstringSearch.enable = true;
 
     oh-my-zsh = {
       enable = true;
