@@ -11,6 +11,7 @@
       # libyaml.dev # required for psych Ruby gem
       nerd-fonts.droid-sans-mono
       nerd-fonts.fira-code
+      nodejs_23
       overmind
       ripgrep
       ruby_3_3
