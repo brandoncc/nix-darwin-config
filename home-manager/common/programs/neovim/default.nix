@@ -6,5 +6,6 @@ in {
   programs.neovim = {
     enable = true;
     package = neovimNightlyPackage;
+    withRuby = false;
   };
 }
