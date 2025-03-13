@@ -14,7 +14,6 @@
     "/Applications/Google Chrome.app"
     "${config.users.users.brandoncc.home}/Applications/Chrome Apps.localized/Gmail.app"
     "${config.users.users.brandoncc.home}/Applications/Chrome Apps.localized/Taskarific.app"
-    "${config.users.users.brandoncc.home}/Applications/Chrome Apps.localized/Workplace.app"
     "${config.users.users.brandoncc.home}/Applications/Chrome Apps.localized/Google Calendar.app"
     "/Applications/Google Drive.app"
   ];
