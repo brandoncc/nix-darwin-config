@@ -2,6 +2,9 @@
 
 {
   nix.settings.experimental-features = "nix-command flakes";
+  nix.settings.trusted-users = [
+    "@admin"
+  ];
 
   # Set user configuration options in nix-darwin
   users.users.brandoncc = {
