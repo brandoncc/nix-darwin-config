@@ -12,7 +12,7 @@
     # shell = pkgs.zsh; # managed by home-manager
   };
 
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   # Enable nix-darwin management
   # This version should match the one you're using (e.g., 23.05 or later)
@@ -74,8 +74,6 @@
       "nikitabobko/tap/aerospace"
     ];
   };
-
-  services.nix-daemon.enable = true;
 
   launchd.agents.AeroSpace.serviceConfig = {
     Program = "/Applications/AeroSpace.app/Contents/MacOS/AeroSpace";
