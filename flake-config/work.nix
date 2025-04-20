@@ -3,6 +3,11 @@
 {
   imports = [ ./common.nix ];
 
+  # This will get added by dev everytime I rebuild otherwise. This causes dev to restart the nix daemon.
+  nix.extraOptions = ''
+    !include nix.conf.d/dev.conf
+  '';
+
   homebrew.onActivation.cleanup = "none"; # do not remove homebrew packages installed outside of nix
 
   homebrew.casks = lib.mkAfter [
