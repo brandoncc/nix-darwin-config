@@ -12,6 +12,7 @@
       nerd-fonts.droid-sans-mono
       nerd-fonts.fira-code
       nodejs_23
+      ollama
       overmind
       ripgrep
       ruby_3_3
