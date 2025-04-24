@@ -72,6 +72,7 @@
       "hammerspoon"
       "logseq"
       "nikitabobko/tap/aerospace"
+      "shortcat"
     ];
   };
 
