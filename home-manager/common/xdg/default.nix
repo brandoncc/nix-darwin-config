@@ -39,5 +39,10 @@ in  {
     #   target = "../.tmux.conf"; # ~/.config/../.tmux.conf
     #   recursive = true;
     # };
+
+    configFile."git-safe-wrapper" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home-bin/git";
+      target = "../bin/git"; # ~/.config/../bin/git
+    };
   };
 }

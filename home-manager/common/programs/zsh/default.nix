@@ -30,6 +30,9 @@
 
       source ~/.common.zshrc
       source ~/.zshrc
+
+      # Make sure that dev can't override my wrappers such as `git`. Put this line LAST so that other scripts can't prepend earlier.
+      export PATH="$HOME/bin:$PATH"
     '';
 
     autosuggestion = {
