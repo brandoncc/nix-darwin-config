@@ -26,4 +26,8 @@
   system.defaults.dock.persistent-others = lib.mkAfter [
     "${config.users.users.brandoncc.home}/Screenshots"
   ];
+
+  homebrew.brews = lib.mkAfter [
+    "uv"
+  ];
 }
