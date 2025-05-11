@@ -6,7 +6,7 @@
     autocd = true;
     dotDir = ".config/zsh";
 
-    initExtra = ''
+    initContent = ''
       # Ensure homebrew paths are in PATH. We have to do this manually because
       # using programs.zsh.dotDir causes these paths to be removed for some
       # reason.
