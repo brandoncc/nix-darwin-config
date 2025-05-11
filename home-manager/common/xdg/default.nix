@@ -5,7 +5,7 @@ in  {
   xdg = {
     configFile."aerospace" = {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/aerospace/.aerospace.toml";
-      target = "../.aerospace.toml"; # ~/.config/../.aerospace
+      target = "../.aerospace.toml"; # ~/.aerospace
     };
 
     configFile."common-zsh" = {
@@ -15,12 +15,12 @@ in  {
 
     configFile."editorconfig" = {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/editorconfig/.editorconfig";
-      target = "../.editorconfig"; # ~/.config/../.editorconfig
+      target = "../.editorconfig"; # ~/.editorconfig
     };
 
     configFile."hammerspoon" = {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/hammerspoon/.hammerspoon";
-      target = "../.hammerspoon"; # ~/.config/../.hammerspoon
+      target = "../.hammerspoon"; # ~/.hammerspoon
     };
 
     configFile."nvim-unchained" = {
@@ -33,12 +33,12 @@ in  {
 
     # configFile."tmux" = {
     #   source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/tmux/.tmux.conf";
-    #   target = "../.tmux.conf"; # ~/.config/../.tmux.conf
+    #   target = "../.tmux.conf"; # ~/.tmux.conf
     # };
 
     configFile."git-safe-wrapper" = {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home-bin/git";
-      target = "../bin/git"; # ~/.config/../bin/git
+      target = "../bin/git"; # ~/bin/git
     };
 
     configFile."git-branch-cleaner" = {
