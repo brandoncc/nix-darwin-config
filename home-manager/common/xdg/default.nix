@@ -40,5 +40,10 @@ in  {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home-bin/git";
       target = "../bin/git"; # ~/.config/../bin/git
     };
+
+    configFile."git-branch-cleaner" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home-bin/git-branch-cleaner";
+      target = "../bin/git-branch-cleaner"; # ~/bin/git-branch-cleaner
+    };
   };
 }

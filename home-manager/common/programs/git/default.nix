@@ -4,6 +4,10 @@
   programs.git = {
     enable = true;
 
+    aliases = {
+      "bc" = "branch-cleaner"; # This makes 'git bc' call 'git branch-cleaner'
+    };
+
     ignores = [
       "*~"
       "**/.DS_Store"
