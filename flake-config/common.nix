@@ -35,6 +35,8 @@
 
   system.defaults.NSGlobalDomain.AppleInterfaceStyle = "Dark";
 
+  system.primaryUser = "brandoncc";
+
   # Set nixpkgs configuration to allow unfree software (if you want proprietary apps)
   nixpkgs.config.allowUnfree = true;
 
