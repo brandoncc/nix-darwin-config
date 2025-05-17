@@ -7,6 +7,7 @@
       _1password-cli
       gh
       go
+      kitty
       # libsass # required for sassc Ruby gem
       # libyaml.dev # required for psych Ruby gem
       nerd-fonts.droid-sans-mono
@@ -19,7 +20,6 @@
       rustup
       # sassc
       stow
-      wezterm
       yarn-berry
     ];
 }

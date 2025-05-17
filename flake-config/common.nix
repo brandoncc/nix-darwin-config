@@ -69,6 +69,7 @@
 
     casks = [
       "alfred"
+      "ghostty"
       "hammerspoon"
       "logseq"
       "nikitabobko/tap/aerospace"
