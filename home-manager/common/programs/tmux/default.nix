@@ -2,7 +2,7 @@
 
 {
   programs.tmux = {
-    enable = true;
+    enable = false;
     baseIndex = 1;
     disableConfirmationPrompt = true;
     escapeTime = 0;
