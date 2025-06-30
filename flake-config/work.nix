@@ -11,7 +11,7 @@
   homebrew.onActivation.cleanup = "none"; # do not remove homebrew packages installed outside of nix
 
   homebrew.casks = lib.mkAfter [
-    "vanilla"
+    "jordanbaird-ice"
   ];
 
   system.defaults.dock.persistent-apps = [
