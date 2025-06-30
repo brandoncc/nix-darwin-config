@@ -40,8 +40,6 @@
       strategy = ["history" "completion"];
     };
 
-    defaultKeymap = "viins";
-
     oh-my-zsh = {
       enable = true;
       plugins = ["autojump"];
@@ -58,6 +56,11 @@
           rev = "v0.7.1";
           sha256 = "02p5wq93i12w41cw6b00hcgmkc8k80aqzcy51qfzi0armxig555y";
         };
+      }
+      {
+        name = "vi-mode";
+        src = pkgs.zsh-vi-mode;
+        file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
       }
     ];
   };
