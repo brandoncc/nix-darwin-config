@@ -10,6 +10,7 @@
       kitty
       # libsass # required for sassc Ruby gem
       # libyaml.dev # required for psych Ruby gem
+      lazygit
       nerd-fonts.droid-sans-mono
       nerd-fonts.fira-code
       nodejs_24
