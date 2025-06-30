@@ -5,6 +5,7 @@
     with pkgs; [
       # _1password-gui # broken!
       _1password-cli
+      fzf
       gh
       go
       kitty
