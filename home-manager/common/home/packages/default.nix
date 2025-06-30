@@ -21,6 +21,7 @@
       rustup
       # sassc
       stow
+      tableplus
       yarn-berry
     ];
 }
