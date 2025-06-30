@@ -35,6 +35,10 @@ in  {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/kitty";
     };
 
+    configFile."zellij" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/zellij";
+    };
+
     # configFile."tmux" = {
     #   source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/tmux/.tmux.conf";
     #   target = "../.tmux.conf"; # ~/.tmux.conf
