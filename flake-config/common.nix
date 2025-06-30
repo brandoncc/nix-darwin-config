@@ -75,6 +75,7 @@
       "logseq"
       "nikitabobko/tap/aerospace"
       "shortcat"
+      "tomatobar"
     ];
   };
 
