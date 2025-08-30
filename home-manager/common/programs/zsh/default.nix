@@ -1,10 +1,10 @@
-{pkgs, ...}:
+{pkgs, config, ...}:
 
 {
   programs.zsh = {
     enable = true;
     autocd = true;
-    dotDir = ".config/zsh";
+    dotDir = "${config.xdg.configHome}/zsh";
 
     initContent = ''
       # Ensure homebrew paths are in PATH. We have to do this manually because
