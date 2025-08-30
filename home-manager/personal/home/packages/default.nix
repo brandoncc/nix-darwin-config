@@ -9,6 +9,7 @@
       direnv
       discord
       exercism
+      graphviz
       heroku
       ngrok
       tree
