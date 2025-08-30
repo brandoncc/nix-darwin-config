@@ -29,6 +29,7 @@
 
   launchd.agents.Yoink.serviceConfig = {
     Program = "/Applications/Yoink.app/Contents/MacOS/Yoink";
+    ProgramArguments = [];
     RunAtLoad = true;
   };
 }

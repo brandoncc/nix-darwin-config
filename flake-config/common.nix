@@ -79,13 +79,9 @@
     ];
   };
 
-  launchd.agents.AeroSpace.serviceConfig = {
-    Program = "/Applications/AeroSpace.app/Contents/MacOS/AeroSpace";
-    RunAtLoad = true;
-  };
-
   launchd.agents.Hammerspoon.serviceConfig = {
     Program = "/Applications/Hammerspoon.app/Contents/MacOS/Hammerspoon";
+    ProgramArguments = [];
     RunAtLoad = true;
   };
 
