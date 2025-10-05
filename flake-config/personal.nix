@@ -8,7 +8,10 @@
     "/Applications/Spark Desktop.app"
   ];
 
-  homebrew.onActivation.cleanup = "zap"; # uninstall packages not in the list _and_ remove their related files and configurations
+  homebrew.onActivation = {
+    cleanup = "zap"; # uninstall packages not in the list _and_ remove their related files and configurations
+    autoUpdate = true;
+  };
 
   homebrew.casks = lib.mkAfter [
     "1password"

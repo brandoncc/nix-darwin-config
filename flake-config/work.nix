@@ -8,7 +8,10 @@
     !include nix.conf.d/dev.conf
   '';
 
-  homebrew.onActivation.cleanup = "none"; # do not remove homebrew packages installed outside of nix
+  homebrew.onActivation = {
+    cleanup = "none"; # do not remove homebrew packages installed outside of nix
+    autoUpdate = true;
+  };
 
   homebrew.casks = lib.mkAfter [
     "jordanbaird-ice"
