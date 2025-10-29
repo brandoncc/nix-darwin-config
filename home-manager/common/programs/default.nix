@@ -8,6 +8,7 @@
     ./aerospace
     ./autojump
     ./git
+    ./lazygit
     ./neovim
     ./tmux
     ./zellij
