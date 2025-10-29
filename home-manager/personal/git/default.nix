@@ -17,5 +17,18 @@
     pull.rebase = false;
     push.default = "current";
     rebase.updateRefs = true;
+    diff = {
+      tool = "difftastic";
+      external = "difft";
+    };
+    difftool = {
+      difftastic = {
+        cmd = ''difft "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"'';
+      };
+      prompt = false;
+    };
+    pager = {
+      difftool = true;
+    };
   };
 }
