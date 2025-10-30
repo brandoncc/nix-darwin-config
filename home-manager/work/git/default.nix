@@ -8,7 +8,10 @@
   ];
 
   programs.git.extraConfig = {
-    core.editor = "nvim";
+    core = {
+      editor = "nvim";
+      fsmonitor = false;
+    };
 
     "filter \"lfs\"" = {
       clean = "git-lfs clean -- %f";
