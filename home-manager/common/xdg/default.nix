@@ -13,6 +13,11 @@ in  {
       target = "../.common.zshrc"; # ~/.common.zshrc
     };
 
+    configFile."common-zsh-functions" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/zsh/common-functions";
+      target =  "zsh/common-functions";
+    };
+
     configFile."editorconfig" = {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/editorconfig/.editorconfig";
       target = "../.editorconfig"; # ~/.editorconfig
