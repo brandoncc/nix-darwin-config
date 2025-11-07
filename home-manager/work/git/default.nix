@@ -1,13 +1,14 @@
 { config, ... }:
 
 {
-  programs.git.userName = "Brandon Conway";
-  programs.git.userEmail = "brandon.conway@shopify.com";
   programs.git.includes = [
     { path = "${config.home.homeDirectory}/.config/dev/gitconfig"; }
   ];
 
-  programs.git.extraConfig = {
+  programs.git.settings = {
+    user.name = "Brandon Conway";
+    user.email = "brandon.conway@shopify.com";
+
     core = {
       editor = "nvim";
       fsmonitor = false;
