@@ -1,13 +1,14 @@
 { ... }:
 
 {
-  programs.git.userName = "Brandon Conway";
-  programs.git.userEmail = "brandoncc@gmail.com";
   programs.git.signing = {
     key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICc1mtp7I4EyrzuLB+6hiupJL4lgatD7jz+rCKxgTJsy";
     signByDefault = true;
   };
-  programs.git.extraConfig = {
+  programs.git.settings = {
+    user.name = "Brandon Conway";
+    user.email = "brandoncc@gmail.com";
+
     alias.set-upstream = "!git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`";
     credential.helper = "osxkeychain";
     gpg.format = "ssh";
