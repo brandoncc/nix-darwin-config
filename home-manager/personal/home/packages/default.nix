@@ -9,9 +9,13 @@
       direnv
       discord
       exercism
+      ffmpeg
       graphviz
       heroku
+      iina
       ngrok
+      nmap
+      raycast
       tree
     ];
 }

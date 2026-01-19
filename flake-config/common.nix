@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   nix.settings.experimental-features = "nix-command flakes";
@@ -46,7 +46,8 @@
 
   # If you need to install additional packages, you can specify them here.
   # Example:
-  # environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
+    libffi
   #   git
   #   stow
   #   gh
@@ -54,8 +55,7 @@
   #   inputs.wezterm.packages.${pkgs.system}.default
   #   mkalias # alias nix apps to /Applications
   #   #logseq
-  # ];
-  #
+  ];
 
   homebrew = {
     enable = true;

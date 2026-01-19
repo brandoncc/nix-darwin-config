@@ -13,6 +13,10 @@
     autoUpdate = true;
   };
 
+  homebrew.brews = lib.mkAfter [
+    "vips"
+  ];
+
   homebrew.casks = lib.mkAfter [
     "1password"
     "brave-browser"

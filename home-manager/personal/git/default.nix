@@ -17,6 +17,7 @@
     mergetool.keepBackup = true;
     pull.rebase = false;
     push.default = "current";
+    push.autoSetupRemote = true;
     rebase.updateRefs = true;
     diff = {
       tool = "difftastic";

@@ -13,9 +13,9 @@ in  {
       target = "../.common.zshrc"; # ~/.common.zshrc
     };
 
-    configFile."common-zsh-functions" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/zsh/common-functions";
-      target =  "zsh/common-functions";
+    configFile."common-zsh-includes" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/zsh/includes";
+      target = "zsh/includes";
     };
 
     configFile."editorconfig" = {
