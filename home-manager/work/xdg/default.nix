@@ -23,6 +23,16 @@ in  {
     target = "../.claude/settings.json";
   };
 
+  xdg.configFile.work-claude-agents = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/work/agents";
+    target = "../.claude/agents";
+  };
+
+  xdg.configFile.work-claude-scripts = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/work/scripts";
+    target = "../.claude/scripts";
+  };
+
   xdg.configFile.work-zsh = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/zsh/.work.zshrc";
     target = "../.zshrc";
