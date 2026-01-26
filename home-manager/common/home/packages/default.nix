@@ -5,7 +5,6 @@
     with pkgs; [
       # _1password-gui # broken!
       _1password-cli
-      difftastic
       fzf
       gh
       go
