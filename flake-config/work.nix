@@ -4,9 +4,17 @@
   imports = [ ./common.nix ];
 
   # This will get added by dev everytime I rebuild otherwise. This causes dev to restart the nix daemon.
-  nix.extraOptions = ''
-    !include nix.conf.d/dev.conf
-  '';
+
+  nix = {
+    extraOptions = ''
+      !include nix.conf.d/shopify_cache.conf
+    '';
+
+    envVars = {
+      AWS_SHARED_CREDENTIALS_FILE = "/etc/nix/aws/credentials";
+      OBJC_DISABLE_INITIALIZE_FORK_SAFETY = "YES";
+    };
+  };
 
   homebrew.onActivation = {
     cleanup = "none"; # do not remove homebrew packages installed outside of nix
@@ -21,7 +29,6 @@
     "/Applications/Logseq.app"
     "/Applications/Google Chrome.app"
     "${config.users.users.brandoncc.home}/Applications/Chrome Apps.localized/Gmail.app"
-    "${config.users.users.brandoncc.home}/Applications/Chrome Apps.localized/Taskarific.app"
     "${config.users.users.brandoncc.home}/Applications/Chrome Apps.localized/Google Calendar.app"
     "/Applications/Google Drive.app"
   ];
