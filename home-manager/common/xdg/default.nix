@@ -58,5 +58,10 @@ in  {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home-bin/git-branch-cleaner";
       target = "../bin/git-branch-cleaner"; # ~/bin/git-branch-cleaner
     };
+
+    configFile."ralph-improve" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home-bin/ralph-improve";
+      target = "../bin/ralph-improve"; # ~/bin/ralph-improve
+    };
   };
 }
