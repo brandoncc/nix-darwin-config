@@ -14,6 +14,7 @@
   };
 
   homebrew.brews = lib.mkAfter [
+    "hydra"
     "vips"
   ];
 
