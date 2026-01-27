@@ -68,5 +68,10 @@ in  {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home-bin/ralph-security";
       target = "../bin/ralph-security"; # ~/bin/ralph-security
     };
+
+    configFile."ralph-review" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home-bin/ralph-review";
+      target = "../bin/ralph-review"; # ~/bin/ralph-review
+    };
   };
 }
