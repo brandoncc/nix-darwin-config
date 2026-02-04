@@ -11,6 +11,7 @@
     ./lazygit
     ./neovim
     ./tmux
+    ./visidata
     ./zellij
     ./zsh
   ];
