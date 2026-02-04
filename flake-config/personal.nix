@@ -14,6 +14,8 @@
   };
 
   homebrew.brews = lib.mkAfter [
+    "agg"
+    "asciinema"
     "hydra"
     "vips"
   ];
@@ -21,6 +23,7 @@
   homebrew.casks = lib.mkAfter [
     "1password"
     "brave-browser"
+    "keycastr"
     "quicken"
   ];
 
