@@ -3,11 +3,6 @@
 let
   dotfiles = "${config.home.homeDirectory}/.dotfiles";
 in  {
-  xdg.configFile.work-claude-commands = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/work/commands";
-    target = "../.claude/commands";
-  };
-
   xdg.configFile.work-claude-instructions = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/work/instructions";
     target = "../.claude/instructions";
