@@ -73,5 +73,10 @@ in  {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home-bin/ralph-review";
       target = "../bin/ralph-review"; # ~/bin/ralph-review
     };
+
+    configFile."ralph-interview" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home-bin/ralph-interview";
+      target = "../bin/ralph-interview"; # ~/bin/ralph-interview
+    };
   };
 }
