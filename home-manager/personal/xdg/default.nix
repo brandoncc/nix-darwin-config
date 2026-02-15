@@ -38,6 +38,11 @@ in  {
     target = "../.claude/settings.json";
   };
 
+  xdg.configFile.personal-claude-scripts = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/common/scripts";
+    target = "../.claude/scripts";
+  };
+
   xdg.configFile.personal-claude-skills = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/personal/skills";
     target = "../.claude/skills";
