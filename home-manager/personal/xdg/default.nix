@@ -23,6 +23,11 @@ in  {
     target = "../.claude/CLAUDE.md";
   };
 
+  xdg.configFile.personal-claude-prompts = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/common/prompts";
+    target = "../.claude/prompts";
+  };
+
   xdg.configFile.personal-claude-rules = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/personal/rules";
     target = "../.claude/rules";

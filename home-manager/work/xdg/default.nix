@@ -23,6 +23,11 @@ in  {
     target = "../.claude/agents";
   };
 
+  xdg.configFile.work-claude-prompts = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/common/prompts";
+    target = "../.claude/prompts";
+  };
+
   xdg.configFile.work-claude-rules = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/work/rules";
     target = "../.claude/rules";
