@@ -23,9 +23,19 @@ in  {
     target = "../.claude/agents";
   };
 
+  xdg.configFile.work-claude-rules = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/work/rules";
+    target = "../.claude/rules";
+  };
+
   xdg.configFile.work-claude-scripts = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/work/scripts";
     target = "../.claude/scripts";
+  };
+
+  xdg.configFile.work-claude-skills = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/work/skills";
+    target = "../.claude/skills";
   };
 
   xdg.configFile.work-zsh = {

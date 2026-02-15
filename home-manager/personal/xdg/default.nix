@@ -23,9 +23,19 @@ in  {
     target = "../.claude/CLAUDE.md";
   };
 
+  xdg.configFile.personal-claude-rules = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/personal/rules";
+    target = "../.claude/rules";
+  };
+
   xdg.configFile.personal-claude-settings = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/personal/settings.json";
     target = "../.claude/settings.json";
+  };
+
+  xdg.configFile.personal-claude-skills = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/personal/skills";
+    target = "../.claude/skills";
   };
 
   xdg.configFile.personal-zsh = {
