@@ -38,6 +38,11 @@ in  {
     target = "../.claude/settings.json";
   };
 
+  xdg.configFile.personal-claude-statusline = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/common/statusline.sh";
+    target = "../.claude/statusline.sh";
+  };
+
   xdg.configFile.personal-claude-scripts = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/common/scripts";
     target = "../.claude/scripts";

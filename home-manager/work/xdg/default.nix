@@ -33,6 +33,11 @@ in  {
     target = "../.claude/rules";
   };
 
+  xdg.configFile.work-claude-statusline = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/common/statusline.sh";
+    target = "../.claude/statusline.sh";
+  };
+
   xdg.configFile.work-claude-scripts = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/work/scripts";
     target = "../.claude/scripts";
