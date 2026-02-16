@@ -43,6 +43,11 @@ in  {
     target = "../.claude/statusline.sh";
   };
 
+  xdg.configFile.personal-claude-agents = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/personal/agents";
+    target = "../.claude/agents";
+  };
+
   xdg.configFile.personal-claude-scripts = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/common/scripts";
     target = "../.claude/scripts";
