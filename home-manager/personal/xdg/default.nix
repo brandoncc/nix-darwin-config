@@ -49,7 +49,7 @@ in  {
   };
 
   xdg.configFile.personal-claude-scripts = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/common/scripts";
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/personal/scripts";
     target = "../.claude/scripts";
   };
 
