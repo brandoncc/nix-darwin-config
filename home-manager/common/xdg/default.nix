@@ -83,5 +83,10 @@ in  {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home-bin/ralph-interview-complex";
       target = "../bin/ralph-interview-complex"; # ~/bin/ralph-interview-complex
     };
+
+    configFile."plan-view" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home-bin/plan-view";
+      target = "../bin/plan-view"; # ~/bin/plan-view
+    };
   };
 }
