@@ -84,6 +84,16 @@ in  {
       target = "../bin/ralph-interview-complex"; # ~/bin/ralph-interview-complex
     };
 
+    configFile."ralph-interview-next" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home-bin/ralph-interview-next";
+      target = "../bin/ralph-interview-next"; # ~/bin/ralph-interview-next
+    };
+
+    configFile."ralph-queue-lib" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home-bin/ralph-queue-lib.sh";
+      target = "../bin/ralph-queue-lib.sh"; # ~/bin/ralph-queue-lib.sh
+    };
+
     configFile."plan-view" = {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home-bin/plan-view";
       target = "../bin/plan-view"; # ~/bin/plan-view
