@@ -35,6 +35,7 @@
       ".solargraph.yml"
       "**/.nvimlog"
       "TODO.md"
+      ".pi/permission-allowlist.json"
     ];
   };
 }
