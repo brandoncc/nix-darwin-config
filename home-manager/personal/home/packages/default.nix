@@ -10,6 +10,7 @@
       discord
       exercism
       ffmpeg
+      glab
       graphviz
       heroku
       iina
