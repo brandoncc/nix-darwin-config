@@ -34,6 +34,7 @@
       "/.vim/coc-settings.json"
       ".solargraph.yml"
       "**/.nvimlog"
+      "TODO.md"
     ];
   };
 }
