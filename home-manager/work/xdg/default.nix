@@ -48,6 +48,16 @@ in  {
     target = "../.claude/skills";
   };
 
+  xdg.configFile.work-pi-settings = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/settings.json";
+    target = "../.pi/agent/settings.json";
+  };
+
+  xdg.configFile.work-pi-keybindings = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/keybindings.json";
+    target = "../.pi/agent/keybindings.json";
+  };
+
   xdg.configFile.work-pi-agents-md = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/AGENTS.md";
     target = "../.pi/agent/AGENTS.md";

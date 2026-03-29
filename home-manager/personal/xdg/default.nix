@@ -58,6 +58,16 @@ in  {
     target = "../.claude/skills";
   };
 
+  xdg.configFile.personal-pi-settings = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/personal/settings.json";
+    target = "../.pi/agent/settings.json";
+  };
+
+  xdg.configFile.personal-pi-keybindings = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/personal/keybindings.json";
+    target = "../.pi/agent/keybindings.json";
+  };
+
   xdg.configFile.personal-pi-agents-md = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/personal/AGENTS.md";
     target = "../.pi/agent/AGENTS.md";
