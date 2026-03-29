@@ -48,6 +48,26 @@ in  {
     target = "../.claude/skills";
   };
 
+  xdg.configFile.work-pi-agents-md = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/AGENTS.md";
+    target = "../.pi/agent/AGENTS.md";
+  };
+
+  xdg.configFile.work-pi-rules = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/rules";
+    target = "../.pi/agent/rules";
+  };
+
+  xdg.configFile.work-pi-skills = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/skills";
+    target = "../.pi/agent/skills";
+  };
+
+  xdg.configFile.work-pi-extensions = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/extensions";
+    target = "../.pi/agent/extensions";
+  };
+
   xdg.configFile.work-zsh = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/zsh/.work.zshrc";
     target = "../.zshrc";

@@ -58,6 +58,26 @@ in  {
     target = "../.claude/skills";
   };
 
+  xdg.configFile.personal-pi-agents-md = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/personal/AGENTS.md";
+    target = "../.pi/agent/AGENTS.md";
+  };
+
+  xdg.configFile.personal-pi-rules = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/personal/rules";
+    target = "../.pi/agent/rules";
+  };
+
+  xdg.configFile.personal-pi-skills = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/personal/skills";
+    target = "../.pi/agent/skills";
+  };
+
+  xdg.configFile.personal-pi-extensions = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/personal/extensions";
+    target = "../.pi/agent/extensions";
+  };
+
   xdg.configFile.personal-zsh = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/zsh/.personal.zshrc";
     target = "../.zshrc"; # ~/.zshrc
