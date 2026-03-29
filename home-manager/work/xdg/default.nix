@@ -78,6 +78,11 @@ in  {
     target = "../.pi/agent/extensions";
   };
 
+  xdg.configFile.work-pi-data = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/data";
+    target = "../.pi/agent/data";
+  };
+
   xdg.configFile.work-pi-user-context = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/user-context.md";
     target = "../.pi/agent/user-context.md";

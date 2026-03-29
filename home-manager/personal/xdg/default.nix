@@ -88,6 +88,11 @@ in  {
     target = "../.pi/agent/extensions";
   };
 
+  xdg.configFile.personal-pi-data = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/personal/data";
+    target = "../.pi/agent/data";
+  };
+
   xdg.configFile.personal-pi-user-context = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/personal/user-context.md";
     target = "../.pi/agent/user-context.md";
