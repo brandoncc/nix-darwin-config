@@ -94,6 +94,11 @@ in  {
       target = "../bin/ralph-queue-lib.sh"; # ~/bin/ralph-queue-lib.sh
     };
 
+    configFile."merge-local" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home-bin/merge-local";
+      target = "../bin/merge-local"; # ~/bin/merge-local
+    };
+
     configFile."plan-view" = {
       source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home-bin/plan-view";
       target = "../bin/plan-view"; # ~/bin/plan-view
