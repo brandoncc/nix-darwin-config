@@ -36,6 +36,7 @@
       "**/.nvimlog"
       "TODO.md"
       ".pi/permission-allowlist.json"
+      ".pi/tmp/"
     ];
   };
 }
