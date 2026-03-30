@@ -88,6 +88,11 @@ in  {
     target = "../.pi/agent/user-context.md";
   };
 
+  xdg.configFile.work-agents-skills = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/agents/work/skills";
+    target = "../.agents/skills";
+  };
+
   xdg.configFile.work-zsh = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/zsh/.work.zshrc";
     target = "../.zshrc";
