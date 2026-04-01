@@ -63,6 +63,11 @@ in  {
     target = "../.pi/agent/AGENTS.md";
   };
 
+  xdg.configFile.work-pi-agents = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/agents";
+    target = "../.pi/agent/agents";
+  };
+
   xdg.configFile.work-pi-rules = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/rules";
     target = "../.pi/agent/rules";
