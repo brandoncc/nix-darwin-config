@@ -2,6 +2,8 @@
 
 let
   dotfiles = "${config.home.homeDirectory}/.dotfiles";
+  piConfig = "${config.home.homeDirectory}/dev/pi-config";
+  piConfigWork = "${config.home.homeDirectory}/dev/pi-config-work";
 in  {
   xdg.configFile.work-claude-instructions = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/work/instructions";
@@ -49,47 +51,47 @@ in  {
   };
 
   xdg.configFile.work-pi-settings = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/settings.json";
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfig}/settings.json";
     target = "../.pi/agent/settings.json";
   };
 
   xdg.configFile.work-pi-keybindings = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/keybindings.json";
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfig}/keybindings.json";
     target = "../.pi/agent/keybindings.json";
   };
 
   xdg.configFile.work-pi-agents-md = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/AGENTS.md";
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfig}/AGENTS.md";
     target = "../.pi/agent/AGENTS.md";
   };
 
   xdg.configFile.work-pi-agents = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/agents";
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfigWork}/agents";
     target = "../.pi/agent/agents";
   };
 
   xdg.configFile.work-pi-rules = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/rules";
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfig}/rules";
     target = "../.pi/agent/rules";
   };
 
   xdg.configFile.work-pi-skills = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/skills";
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfigWork}/skills";
     target = "../.pi/agent/skills";
   };
 
   xdg.configFile.work-pi-extensions = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/extensions";
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfigWork}/extensions";
     target = "../.pi/agent/extensions";
   };
 
   xdg.configFile.work-pi-data = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/data";
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfig}/data";
     target = "../.pi/agent/data";
   };
 
   xdg.configFile.work-pi-user-context = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/work/user-context.md";
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfigWork}/user-context.md";
     target = "../.pi/agent/user-context.md";
   };
 
