@@ -2,6 +2,7 @@
 
 let
   dotfiles = "${config.home.homeDirectory}/.dotfiles";
+  piConfig = "${config.home.homeDirectory}/dev/pi-config";
 in  {
   xdg.configFile.butler-nvim = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/butler.nvim";
@@ -59,48 +60,43 @@ in  {
   };
 
   xdg.configFile.personal-pi-settings = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/personal/settings.json";
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfig}/settings.json";
     target = "../.pi/agent/settings.json";
   };
 
   xdg.configFile.personal-pi-keybindings = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/personal/keybindings.json";
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfig}/keybindings.json";
     target = "../.pi/agent/keybindings.json";
   };
 
   xdg.configFile.personal-pi-agents-md = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/personal/AGENTS.md";
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfig}/AGENTS.md";
     target = "../.pi/agent/AGENTS.md";
   };
 
   xdg.configFile.personal-pi-agents = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/personal/agents";
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfig}/agents";
     target = "../.pi/agent/agents";
   };
 
   xdg.configFile.personal-pi-rules = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/personal/rules";
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfig}/rules";
     target = "../.pi/agent/rules";
   };
 
   xdg.configFile.personal-pi-skills = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/personal/skills";
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfig}/skills";
     target = "../.pi/agent/skills";
   };
 
   xdg.configFile.personal-pi-extensions = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/personal/extensions";
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfig}/extensions";
     target = "../.pi/agent/extensions";
   };
 
   xdg.configFile.personal-pi-data = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/personal/data";
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfig}/data";
     target = "../.pi/agent/data";
-  };
-
-  xdg.configFile.personal-pi-user-context = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/pi/personal/user-context.md";
-    target = "../.pi/agent/user-context.md";
   };
 
   xdg.configFile.personal-zsh = {
