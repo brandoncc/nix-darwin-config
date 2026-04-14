@@ -18,6 +18,7 @@ in  {
   xdg.configFile.work-claude-settings = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/work/settings.json";
     target = "../.claude/settings.json";
+    force = true;
   };
 
   xdg.configFile.work-claude-agents = {
@@ -51,8 +52,9 @@ in  {
   };
 
   xdg.configFile.work-pi-settings = {
-    source = config.lib.file.mkOutOfStoreSymlink "${piConfig}/settings.json";
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfigWork}/settings.json";
     target = "../.pi/agent/settings.json";
+    force = true;
   };
 
   xdg.configFile.work-pi-keybindings = {
@@ -86,18 +88,13 @@ in  {
   };
 
   xdg.configFile.work-pi-data = {
-    source = config.lib.file.mkOutOfStoreSymlink "${piConfig}/data";
+    source = config.lib.file.mkOutOfStoreSymlink "${piConfigWork}/data";
     target = "../.pi/agent/data";
   };
 
   xdg.configFile.work-pi-user-context = {
     source = config.lib.file.mkOutOfStoreSymlink "${piConfigWork}/user-context.md";
     target = "../.pi/agent/user-context.md";
-  };
-
-  xdg.configFile.work-agents-skills = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/agents/work/skills";
-    target = "../.agents/skills";
   };
 
   xdg.configFile.work-zsh = {
