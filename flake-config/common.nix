@@ -1,10 +1,34 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   nix.settings.experimental-features = "nix-command flakes";
   nix.settings.trusted-users = [
     "@admin"
   ];
+
+  # Include Shopify-managed /etc/nix/nix.custom.conf (which !includes shopify.conf)
+  nix.extraOptions = ''
+    !include nix.custom.conf
+  '';
+
+  # Shopify tooling manages /etc/nix/nix.custom.conf as a writable file that
+  # configures caches, trusted users, etc. nix-darwin checks for unknown hashes
+  # in this file and aborts activation, then deletes it. Hide it before the
+  # check runs, and restore it after activation completes.
+  system.activationScripts.checks.text = lib.mkBefore ''
+    if [[ -e /etc/nix/nix.custom.conf ]]; then
+      mv /etc/nix/nix.custom.conf /etc/nix/nix.custom.conf.shopify-backup
+    fi
+  '';
+  system.activationScripts.nix-daemon.text = lib.mkAfter ''
+    if [[ -e /etc/nix/nix.custom.conf.shopify-backup ]]; then
+      mv /etc/nix/nix.custom.conf.shopify-backup /etc/nix/nix.custom.conf
+    fi
+    # Also handle if nix-darwin renamed a leftover
+    if [[ -e /etc/nix/nix.custom.conf.before-nix-darwin && ! -e /etc/nix/nix.custom.conf ]]; then
+      mv /etc/nix/nix.custom.conf.before-nix-darwin /etc/nix/nix.custom.conf
+    fi
+  '';
 
   # Set user configuration options in nix-darwin
   users.users.brandoncc = {
