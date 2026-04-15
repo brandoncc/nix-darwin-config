@@ -9,6 +9,8 @@ in  {
     recursive = true;
   };
 
+  # ~/.claude is now a symlink to ~/dev/claude-config — managed outside home-manager.
+  /*
   xdg.configFile.personal-claude-commands = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/personal/commands";
     target = "../.claude/commands";
@@ -58,6 +60,7 @@ in  {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/personal/skills";
     target = "../.claude/skills";
   };
+  */
 
   xdg.configFile.personal-pi-settings = {
     source = config.lib.file.mkOutOfStoreSymlink "${piConfig}/settings.json";
