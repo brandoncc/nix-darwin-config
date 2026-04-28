@@ -12,6 +12,7 @@
       ffmpeg
       glab
       graphviz
+      hcloud
       heroku
       iina
       ngrok
