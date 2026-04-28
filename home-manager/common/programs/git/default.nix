@@ -38,6 +38,7 @@
       ".pi/permission-allowlist.json"
       ".pi/tmp/"
       ".pi/plans/"
+      ".claude/scheduled_tasks.lock"
     ];
   };
 }
