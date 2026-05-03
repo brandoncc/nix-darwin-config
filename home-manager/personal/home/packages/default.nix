@@ -7,7 +7,6 @@
       clang-tools
       devenv
       direnv
-      discord
       exercism
       ffmpeg
       glab
