@@ -39,6 +39,7 @@
       ".pi/tmp/"
       ".pi/plans/"
       ".claude/scheduled_tasks.lock"
+      ".pi/pr-comments.md"
     ];
   };
 }
