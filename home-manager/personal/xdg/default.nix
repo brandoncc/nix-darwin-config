@@ -3,64 +3,17 @@
 let
   dotfiles = "${config.home.homeDirectory}/.dotfiles";
   piConfig = "${config.home.homeDirectory}/dev/pi-config";
+  claudeConfig = "${config.home.homeDirectory}/dev/claude-config";
 in  {
   xdg.configFile.butler-nvim = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/butler.nvim";
     recursive = true;
   };
 
-  # ~/.claude is now a symlink to ~/dev/claude-config — managed outside home-manager.
-  /*
-  xdg.configFile.personal-claude-commands = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/personal/commands";
-    target = "../.claude/commands";
+  xdg.configFile.personal-claude-dir = {
+    source = config.lib.file.mkOutOfStoreSymlink "${claudeConfig}";
+    target = "../.claude";
   };
-
-  xdg.configFile.personal-claude-instructions = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/personal/instructions";
-    target = "../.claude/instructions";
-  };
-
-  xdg.configFile.personal-claude-md = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/personal/CLAUDE.md";
-    target = "../.claude/CLAUDE.md";
-  };
-
-  xdg.configFile.personal-claude-prompts = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/common/prompts";
-    target = "../.claude/prompts";
-  };
-
-  xdg.configFile.personal-claude-rules = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/personal/rules";
-    target = "../.claude/rules";
-  };
-
-  xdg.configFile.personal-claude-settings = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/personal/settings.json";
-    target = "../.claude/settings.json";
-  };
-
-  xdg.configFile.personal-claude-statusline = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/common/statusline.sh";
-    target = "../.claude/statusline.sh";
-  };
-
-  xdg.configFile.personal-claude-agents = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/personal/agents";
-    target = "../.claude/agents";
-  };
-
-  xdg.configFile.personal-claude-scripts = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/personal/scripts";
-    target = "../.claude/scripts";
-  };
-
-  xdg.configFile.personal-claude-skills = {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/personal/skills";
-    target = "../.claude/skills";
-  };
-  */
 
   xdg.configFile.personal-pi-settings = {
     source = config.lib.file.mkOutOfStoreSymlink "${piConfig}/settings.json";
