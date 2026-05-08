@@ -17,6 +17,7 @@
       ngrok
       nmap
       raycast
+      sqlcipher
       tree
     ];
 }
