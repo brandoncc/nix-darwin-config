@@ -101,4 +101,5 @@ in  {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/zsh/.work.zshrc";
     target = "../.zshrc";
   };
+
 }

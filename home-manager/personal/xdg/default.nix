@@ -65,4 +65,5 @@ in  {
     target = "../.tmuxinator"; # ~/.config/../.tmuxinator
     recursive = true;
   };
+
 }
