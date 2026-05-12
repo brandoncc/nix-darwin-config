@@ -8,5 +8,11 @@ in {
     package = neovimNightlyPackage;
     withPython3 = true;
     withRuby = false;
+
+    # nvim-treesitter `main` branch shells out to the `tree-sitter` CLI to
+    # compile parsers on demand. Make sure it's on nvim's PATH.
+    # See ~/.dotfiles/nvim-unchained/lua/plugins/treesitter.lua for why
+    # we're on `main` and not `master`.
+    extraPackages = [ pkgs.tree-sitter ];
   };
 }
