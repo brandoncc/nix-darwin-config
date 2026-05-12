@@ -22,6 +22,11 @@ in {
     recursive = true;
   };
 
+  xdg.configFile.prune-knowledge = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home-bin/prune-knowledge";
+    target = "../bin/prune-knowledge";
+  };
+
   # ----- claude (per-subdir) -----
 
   xdg.configFile.personal-claude-md = {
