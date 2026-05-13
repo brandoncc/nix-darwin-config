@@ -27,6 +27,11 @@ in {
     target = "../bin/prune-knowledge";
   };
 
+  xdg.configFile.claude-pr-joust = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude-pr-joust/config.json";
+    target = "claude-pr-joust/config.json";
+  };
+
   # ----- claude (per-subdir) -----
 
   xdg.configFile.personal-claude-md = {
