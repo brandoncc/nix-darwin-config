@@ -32,6 +32,22 @@ in {
     target = "claude-pr-joust/config.json";
   };
 
+  # JS package-manager supply-chain hardening — files live in
+  # ~/.dotfiles/{npm,yarn,bun}/ and are linked here writeable so per-project
+  # `npm config set` etc. still work.
+  xdg.configFile.npmrc = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/npm/.npmrc";
+    target = "../.npmrc";
+  };
+  xdg.configFile.yarnrc = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/yarn/.yarnrc.yml";
+    target = "../.yarnrc.yml";
+  };
+  xdg.configFile.bunfig = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/bun/.bunfig.toml";
+    target = "../.bunfig.toml";
+  };
+
   # ----- claude (per-subdir) -----
 
   xdg.configFile.personal-claude-md = {

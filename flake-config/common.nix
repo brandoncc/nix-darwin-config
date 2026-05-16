@@ -73,7 +73,6 @@
   environment.systemPackages = with pkgs; [
     libffi
   #   git
-  #   stow
   #   gh
   #   editorconfig-core-c
   #   inputs.wezterm.packages.${pkgs.system}.default
